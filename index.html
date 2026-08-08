@@ -864,9 +864,19 @@
                 width: 90%;
                 max-width: 360px;
             }
-            .floating-sun {
-                display: none;
+            
+            /* Scale and soften floating suns on mobile instead of hiding them */
+            .bg-sun-layer {
+                opacity: 0.35; 
             }
+            .floating-sun {
+                transform: scale(0.45);
+            }
+            .s-top-right, .s-mid-right-2, .s-bottom-left {
+                width: 220px;
+                height: 220px;
+            }
+
             .boarding-pass {
                 flex-direction: column;
             }
@@ -1102,7 +1112,7 @@
                     wrapper.className = 'polaroid-wrapper reveal-item';
                     wrapper.onclick = function() {
                         this.classList.toggle('flipped');
-                        playPaperSound(); // ✅ sound on click
+                        playPaperSound();
                     };
                     wrapper.innerHTML = `
                             <div class="polaroid-card">
@@ -1121,7 +1131,7 @@
                     wrapper.className = 'polaroid-wrapper reveal-item';
                     wrapper.onclick = function() {
                         this.classList.toggle('flipped');
-                        playPaperSound(); // ✅ sound on click
+                        playPaperSound();
                     };
                     wrapper.innerHTML = `
                             <div class="polaroid-card">
@@ -1208,7 +1218,6 @@
         window.scrollTo(0, 0);
         document.documentElement.classList.add('locked');
 
-        // prevent context menu / shortcuts
         document.addEventListener('keydown', (e) => {
             if (
                 e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.key === 'a' || e.key === 'A' || e.key === 'u' ||
@@ -1219,7 +1228,6 @@
             }
         });
 
-        // DOM refs
         const unboxTrigger = document.getElementById('unbox-trigger');
         const introOverlay = document.getElementById('intro-overlay');
         const clickPrompt = document.querySelector('.click-prompt');
@@ -1281,13 +1289,11 @@
             }, 20);
         }
 
-        // cursor light
         window.addEventListener('mousemove', (e) => {
             cursorLight.style.left = e.clientX + 'px';
             cursorLight.style.top = e.clientY + 'px';
         });
 
-        // ─── initial reveal (silent, no sound) ───
         function revealInitialBatch() {
             const items = document.querySelectorAll('.reveal-item');
             let delay = 0;
@@ -1302,7 +1308,6 @@
             });
         }
 
-        // ─── scroll reveal: only adds class, NO sound ───
         function checkRevealsOnScroll() {
             const triggerBottom = window.innerHeight * 0.88;
             revealItems.forEach((item) => {
@@ -1310,13 +1315,11 @@
                     const itemTop = item.getBoundingClientRect().top;
                     if (itemTop < triggerBottom) {
                         item.classList.add('visible');
-                        // 🚫 NO playPaperSound() here
                     }
                 }
             });
         }
 
-        // ─── intro click ───
         unboxTrigger.addEventListener('click', () => {
             window.scrollTo(0, 0);
             document.documentElement.classList.remove('locked');
@@ -1343,7 +1346,7 @@
 
             setTimeout(() => {
                 contentWrapper.classList.add('visible');
-                revealInitialBatch(); // silent
+                revealInitialBatch();
             }, 4200);
 
             setTimeout(() => {
@@ -1351,7 +1354,6 @@
             }, 4500);
         });
 
-        // ─── audio toggle ───
         function toggleAudioState() {
             if (audioEngine.paused || audioEngine.volume === 0) {
                 fadeInAudio(800);
@@ -1361,7 +1363,6 @@
         }
         playBtn.addEventListener('click', toggleAudioState);
 
-        // ─── scroll listener ───
         window.addEventListener('scroll', checkRevealsOnScroll);
     </script>
 </body>

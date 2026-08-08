@@ -601,9 +601,75 @@
             .pass-main { border-right: none; border-bottom: 2px dashed #d8caa9; }
             .pass-stub { width: 100%; padding: 16px; flex-direction: row; }
         }
+
+        #rotate-lock-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: #0b0a0a;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .rotate-icon {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 26px;
+            fill: none;
+            stroke: var(--amber-warmth);
+            stroke-width: 1.4;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            animation: rotateHint 1.8s ease-in-out infinite;
+        }
+
+        @keyframes rotateHint {
+            0%, 12% { transform: rotate(0deg); }
+            50%, 62% { transform: rotate(90deg); }
+            100% { transform: rotate(90deg); }
+        }
+
+        .rotate-title {
+            font-family: 'Bodoni Moda', serif;
+            font-weight: 500;
+            font-size: 1.5rem;
+            color: var(--cream);
+            margin-bottom: 10px;
+        }
+
+        .rotate-sub {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--amber-warmth);
+            max-width: 260px;
+            line-height: 1.8;
+            text-shadow: 0 0 12px rgba(232, 168, 56, 0.3);
+        }
+
+        @media (max-width: 767px) and (orientation: portrait) {
+            #rotate-lock-overlay {
+                display: flex;
+            }
+        }
     </style>
 </head>
 <body class="locked" oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
+
+    <div id="rotate-lock-overlay">
+        <svg class="rotate-icon" viewBox="0 0 24 24">
+            <rect x="7" y="2" width="10" height="20" rx="1.6"></rect>
+            <line x1="11" y1="18.3" x2="13" y2="18.3"></line>
+        </svg>
+        <div class="rotate-title">Please Rotate Your Device</div>
+        <div class="rotate-sub">This is best experienced<br>in landscape mode</div>
+    </div>
 
     <div class="gradient-bg"></div>
     <div class="cursor-light" id="cursor-light"></div>

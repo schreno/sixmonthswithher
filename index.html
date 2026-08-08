@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Volume 06 • Happy Monthsary</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400&family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&family=Reenie+Beanie&family=Libre+Barcode+39&display=swap"
-        rel="stylesheet"
-    />
+
+    <link rel="icon" type="image/png" href="./images/sheandhim.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400&family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..500&family=Reenie+Beanie&family=Libre+Barcode+39&display=swap" rel="stylesheet">
     <style>
-        /* ── reset & basae ── */
         :root {
             --ink-black: #1a1817;
             --amber-warmth: #e8a838;
@@ -31,16 +30,16 @@
             -webkit-touch-callout: none;
         }
 
-        html,
-        body {
+        html, body {
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
-        html.locked,
-        body.locked {
+
+        html.locked, body.locked {
             overflow: hidden !important;
             height: 100vh;
         }
+
         body::-webkit-scrollbar {
             display: none;
         }
@@ -55,7 +54,6 @@
             transition: background-color 1.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* ── gradient background ── */
         .gradient-bg {
             position: fixed;
             inset: 0;
@@ -66,22 +64,17 @@
             opacity: 0;
             transition: opacity 2s ease;
         }
+
         body.lit .gradient-bg {
             opacity: 1;
         }
+
         @keyframes gradientShift {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
-        /* ── floating suns ── */
         .bg-sun-layer {
             position: absolute;
             top: 0;
@@ -94,6 +87,7 @@
             opacity: 0;
             transition: opacity 2.5s ease;
         }
+
         body.suns-active .bg-sun-layer {
             opacity: 0.68;
         }
@@ -115,6 +109,7 @@
             will-change: transform;
             transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
+
         .floating-sun::before {
             content: '';
             position: absolute;
@@ -129,113 +124,42 @@
             animation: spinAura 12s linear infinite alternate;
         }
 
-        .s-top-left-1 {
-            top: 2%;
-            left: 4%;
-            width: 130px;
-            height: 130px;
-            animation-duration: 12s;
-        }
-        .s-top-left-2 {
-            top: 8%;
-            left: 14%;
-            width: 180px;
-            height: 180px;
-            animation-duration: 16s;
-        }
-        .s-top-right {
-            top: 1%;
-            right: -3%;
-            width: 450px;
-            height: 450px;
-            animation-duration: 22s;
-        }
-        .s-mid-left-1 {
-            top: 28%;
-            left: -6%;
-            width: 380px;
-            height: 380px;
-            animation-duration: 20s;
-        }
-        .s-mid-right-1 {
-            top: 38%;
-            right: 5%;
-            width: 160px;
-            height: 160px;
-            animation-duration: 14s;
-        }
-        .s-mid-left-2 {
-            top: 58%;
-            left: 10%;
-            width: 200px;
-            height: 200px;
-            animation-duration: 17s;
-        }
-        .s-mid-right-2 {
-            top: 68%;
-            right: -5%;
-            width: 420px;
-            height: 420px;
-            animation-duration: 24s;
-        }
-        .s-bottom-left {
-            top: 88%;
-            left: -4%;
-            width: 390px;
-            height: 390px;
-            animation-duration: 21s;
-        }
-        .s-bottom-right-1 {
-            top: 84%;
-            right: 18%;
-            width: 140px;
-            height: 140px;
-            animation-duration: 13s;
-        }
-        .s-bottom-right-2 {
-            top: 92%;
-            right: 6%;
-            width: 190px;
-            height: 190px;
-            animation-duration: 15s;
-        }
+        .s-top-left-1 { top: 2%; left: 4%; width: 130px; height: 130px; animation-duration: 12s; }
+        .s-top-left-2 { top: 8%; left: 14%; width: 180px; height: 180px; animation-duration: 16s; }
+        .s-top-right { top: 1%; right: -3%; width: 450px; height: 450px; animation-duration: 22s; }
+        .s-mid-left-1 { top: 28%; left: -6%; width: 380px; height: 380px; animation-duration: 20s; }
+        .s-mid-right-1 { top: 38%; right: 5%; width: 160px; height: 160px; animation-duration: 14s; }
+        .s-mid-left-2 { top: 58%; left: 10%; width: 200px; height: 200px; animation-duration: 17s; }
+        .s-mid-right-2 { top: 68%; right: -5%; width: 420px; height: 420px; animation-duration: 24s; }
+        .s-bottom-left { top: 88%; left: -4%; width: 390px; height: 390px; animation-duration: 21s; }
+        .s-bottom-right-1 { top: 84%; right: 18%; width: 140px; height: 140px; animation-duration: 13s; }
+        .s-bottom-right-2 { top: 92%; right: 6%; width: 190px; height: 190px; animation-duration: 15s; }
 
         @keyframes spinAndSway {
-            0% {
-                transform: rotate(0deg) translate(0px, 0px) scale(0.95);
-            }
-            33% {
-                transform: rotate(120deg) translate(25px, -18px) scale(1.15);
-            }
-            66% {
-                transform: rotate(240deg) translate(-20px, 22px) scale(1.05);
-            }
-            100% {
-                transform: rotate(360deg) translate(15px, -12px) scale(1.22);
-            }
-        }
-        @keyframes spinAura {
-            0% {
-                transform: rotate(0deg) scale(0.9);
-            }
-            100% {
-                transform: rotate(-360deg) scale(1.2);
-            }
+            0% { transform: rotate(0deg) translate(0px, 0px) scale(0.95); }
+            33% { transform: rotate(120deg) translate(25px, -18px) scale(1.15); }
+            66% { transform: rotate(240deg) translate(-20px, 22px) scale(1.05); }
+            100% { transform: rotate(360deg) translate(15px, -12px) scale(1.22); }
         }
 
-        /* ── cursor light ── */
+        @keyframes spinAura {
+            0% { transform: rotate(0deg) scale(0.9); }
+            100% { transform: rotate(-360deg) scale(1.2); }
+        }
+
         .cursor-light {
             position: fixed;
             width: 550px;
             height: 550px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(232, 168, 56, 0.16) 0%, rgba(200, 90, 50, 0.03) 50%, rgba(0, 0, 0, 0) 70%);
+            background: radial-gradient(circle, rgba(232, 168, 56, 0.16) 0%, rgba(200, 90, 50, 0.03) 50%, rgba(0,0,0,0) 70%);
             pointer-events: none;
             z-index: -2;
             transform: translate(-50%, -50%);
             transition: opacity 1s ease;
             opacity: 0;
         }
+
         body.lit .cursor-light {
             opacity: 1;
         }
@@ -249,7 +173,6 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
-        /* ── intro overlay ── */
         #intro-overlay {
             position: fixed;
             inset: 0;
@@ -261,6 +184,7 @@
             background: #0b0a0a;
             transition: opacity 1.5s cubic-bezier(0.65, 0, 0.35, 1), visibility 1.5s;
         }
+
         #intro-overlay.fade-out {
             opacity: 0;
             visibility: hidden;
@@ -278,15 +202,17 @@
             inset: 0;
             background: #111;
             border-radius: 6px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
             z-index: 2;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255,255,255,0.12);
             transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
         }
+
         .sleeve-container:hover .album-sleeve {
             transform: translateY(-8px);
         }
+
         .sleeve-cover-img {
             width: 100%;
             height: 100%;
@@ -303,7 +229,7 @@
             background: repeating-radial-gradient(#111, #111 2px, #222 3px, #111 4px);
             border-radius: 50%;
             z-index: 1;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             transform: translateY(-50%) translateX(0) rotate(0deg);
             transform-origin: center center;
             transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -311,6 +237,7 @@
             align-items: center;
             justify-content: center;
         }
+
         .sleeve-container:hover .vinyl-preview {
             transform: translateY(-50%) translateX(85px) rotate(30deg);
         }
@@ -322,13 +249,15 @@
             overflow: hidden;
             position: relative;
             border: 2px solid #111;
-            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 0 4px rgba(255,255,255,0.1);
         }
+
         .vinyl-label img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .vinyl-label::after {
             content: '';
             position: absolute;
@@ -339,30 +268,22 @@
             background: #0b0a0a;
             border-radius: 50%;
             transform: translate(-50%, -50%);
-            box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.8);
+            box-shadow: inset 0 0 2px rgba(0,0,0,0.8);
         }
 
         .sleeve-container.animating .album-sleeve {
             transform: translateY(140px) scale(0.85);
             opacity: 0;
         }
+
         .sleeve-container.animating .vinyl-preview {
             animation: vinylCenterSpin 3.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
 
         @keyframes vinylCenterSpin {
-            0% {
-                transform: translateY(-50%) translateX(85px) rotate(30deg) scale(1);
-                opacity: 1;
-            }
-            35% {
-                transform: translateY(-50%) translateX(-10px) rotate(180deg) scale(1.05);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-50%) translateX(-10px) rotate(1080deg) scale(2.2);
-                opacity: 0;
-            }
+            0% { transform: translateY(-50%) translateX(85px) rotate(30deg) scale(1); opacity: 1; }
+            35% { transform: translateY(-50%) translateX(-10px) rotate(180deg) scale(1.05); opacity: 1; }
+            100% { transform: translateY(-50%) translateX(-10px) rotate(1080deg) scale(2.2); opacity: 0; }
         }
 
         .click-prompt {
@@ -377,22 +298,17 @@
             transition: opacity 0.3s ease;
             animation: promptPulse 3s ease-in-out infinite alternate;
         }
+
         .click-prompt.hide {
             opacity: 0 !important;
             pointer-events: none;
         }
+
         @keyframes promptPulse {
-            0% {
-                opacity: 0.6;
-                transform: translateY(0);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(-10px);
-            }
+            0% { opacity: 0; transform: translateY(0); }
+            100% { opacity: 1; transform: translateY(-10px); }
         }
 
-        /* ── content wrapper ── */
         #content-wrapper {
             opacity: 0;
             max-width: 680px;
@@ -402,14 +318,11 @@
             z-index: 1;
             transition: opacity 1.8s ease;
         }
-        #content-wrapper.visible {
-            opacity: 1;
-        }
 
-        .header-section {
-            text-align: center;
-            margin-bottom: 70px;
-        }
+        #content-wrapper.visible { opacity: 1; }
+
+        .header-section { text-align: center; margin-bottom: 70px; }
+
         .vol-tag {
             font-family: system-ui, -apple-system, sans-serif;
             font-size: 0.75rem;
@@ -419,6 +332,7 @@
             margin-bottom: 12px;
             display: block;
         }
+
         .main-title {
             font-family: 'Bodoni Moda', serif;
             font-size: 3.5rem;
@@ -427,61 +341,52 @@
             letter-spacing: -1px;
             margin-bottom: 15px;
         }
-        .date-line {
-            font-style: italic;
-            color: #777;
-            font-size: 1.1rem;
-        }
 
-        /* ── reveal items ── */
+        .date-line { font-style: italic; color: #777; font-size: 1.1rem; }
+
         .reveal-item {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity var(--domino-speed) cubic-bezier(0.16, 1, 0.3, 1),
-                transform var(--domino-speed) cubic-bezier(0.16, 1, 0.3, 1);
+            transition: opacity var(--domino-speed) cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform var(--domino-speed) cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
             margin-bottom: 32px;
         }
-        .reveal-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
 
-        .letter-content {
-            font-size: 1.35rem;
-            line-height: 1.9;
-            color: #2a2827;
-            font-weight: 350;
-        }
+        .reveal-item.visible { opacity: 1; transform: translateY(0); }
 
-        /* ── drop cap ── */
+        .letter-content { font-size: 1.35rem; line-height: 1.9; color: #2a2827; font-weight: 350; }
+
         .drop-cap-container {
             margin-bottom: 24px;
         }
+
         .drop-cap-header {
             display: flex;
             align-items: flex-start;
             gap: 8px;
             margin-bottom: 16px;
         }
+
         .drop-cap-letter {
             font-family: 'Bodoni Moda', serif;
             font-size: 5rem;
             line-height: 0.8;
             color: var(--terracotta);
         }
+
         .drop-cap-salutation {
             font-size: 1.35rem;
             color: #2a2827;
             margin-top: 6px;
         }
+
         .drop-cap-body {
             font-size: 1.35rem;
             line-height: 1.9;
             color: #2a2827;
         }
 
-        /* ── quote ── */
         .quote-block {
             margin: 50px 0;
             padding: 40px;
@@ -493,6 +398,7 @@
             border-radius: 4px;
             text-align: center;
         }
+
         .quote-text {
             font-family: 'Bodoni Moda', serif;
             font-style: italic;
@@ -500,6 +406,7 @@
             line-height: 1.4;
             color: var(--ink-black);
         }
+
         .quote-sub {
             margin-top: 12px;
             font-size: 0.85rem;
@@ -519,42 +426,19 @@
             opacity: 0.6;
         }
 
-        /* ── polaroid ── */
-        .polaroid-wrapper {
-            perspective: 1000px;
-            margin: 50px auto;
-            width: 100%;
-            max-width: 360px;
-            cursor: pointer;
-        }
+        .polaroid-wrapper { perspective: 1000px; margin: 50px auto; width: 100%; max-width: 360px; cursor: pointer; }
         .polaroid-card {
             width: 100%;
             position: relative;
             transform-style: preserve-3d;
             transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
             border-radius: 4px;
         }
-        .polaroid-wrapper.flipped .polaroid-card {
-            transform: rotateY(180deg);
-        }
-        .polaroid-front,
-        .polaroid-back {
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        .polaroid-front {
-            display: block;
-            width: 100%;
-        }
-        .polaroid-front img {
-            width: 100%;
-            height: auto;
-            display: block;
-            pointer-events: none;
-        }
+        .polaroid-wrapper.flipped .polaroid-card { transform: rotateY(180deg); }
+        .polaroid-front, .polaroid-back { backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 4px; overflow: hidden; }
+        .polaroid-front { display: block; width: 100%; }
+        .polaroid-front img { width: 100%; height: auto; display: block; pointer-events: none; }
         .polaroid-back {
             position: absolute;
             inset: 0;
@@ -567,110 +451,35 @@
             justify-content: center;
             text-align: center;
             border: 12px solid #fffdf7;
-            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.03);
-        }
-        .secret-note {
-            font-family: 'Reenie Beanie', cursive;
-            font-size: 2.2rem;
-            color: var(--terracotta);
-            line-height: 1.3;
-        }
-        .flip-hint {
-            font-family: 'Reenie Beanie', cursive;
-            font-size: 1.3rem;
-            color: #777;
-            margin-top: 15px;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.03);
         }
 
-        /* ── boarding pass ── */
-        .boarding-pass-wrapper {
-            width: 100%;
-            max-width: 520px;
-            margin: 50px auto;
-            perspective: 1000px;
-        }
+        .secret-note { font-family: 'Reenie Beanie', cursive; font-size: 2.2rem; color: var(--terracotta); line-height: 1.3; }
+        .flip-hint { font-family: 'Reenie Beanie', cursive; font-size: 1.3rem; color: #777; margin-top: 15px; }
+
+        .boarding-pass-wrapper { width: 100%; max-width: 520px; margin: 50px auto; perspective: 1000px; }
         .boarding-pass {
             background: #faf6ee;
             border: 1px solid #e2d7c3;
             border-radius: 12px;
             display: flex;
             position: relative;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.06);
             overflow: hidden;
         }
-        .pass-main {
-            flex: 1;
-            padding: 22px 20px;
-            border-right: 2px dashed #d8caa9;
-            position: relative;
-            transition: border-right-color 0.4s ease;
-        }
-        .boarding-pass-wrapper.is-torn .pass-main {
-            border-right-color: transparent;
-        }
-        .pass-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 14px;
-        }
-        .pass-air-title {
-            font-family: system-ui, -apple-system, sans-serif;
-            font-size: 0.65rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--terracotta);
-            font-weight: 700;
-        }
-        .pass-flight-no {
-            font-family: 'Bodoni Moda', serif;
-            font-size: 0.85rem;
-            color: #777;
-        }
-        .pass-route {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 10px 0 16px 0;
-        }
-        .route-code {
-            font-family: 'Bodoni Moda', serif;
-            font-size: 1.8rem;
-            color: var(--ink-black);
-            line-height: 1;
-        }
-        .route-sub {
-            font-size: 0.7rem;
-            color: #888;
-            font-family: system-ui, sans-serif;
-            text-transform: uppercase;
-            margin-top: 2px;
-        }
-        .route-plane {
-            color: var(--terracotta);
-            font-size: 1.2rem;
-            opacity: 0.8;
-        }
-        .pass-meta {
-            display: flex;
-            gap: 20px;
-            font-family: system-ui, sans-serif;
-        }
-        .meta-col {
-            display: flex;
-            flex-direction: column;
-        }
-        .meta-lbl {
-            font-size: 0.6rem;
-            letter-spacing: 1.5px;
-            color: #888;
-            text-transform: uppercase;
-        }
-        .meta-val {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--ink-black);
-        }
+        .pass-main { flex: 1; padding: 22px 20px; border-right: 2px dashed #d8caa9; position: relative; transition: border-right-color 0.4s ease; }
+        .boarding-pass-wrapper.is-torn .pass-main { border-right-color: transparent; }
+        .pass-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+        .pass-air-title { font-family: system-ui, -apple-system, sans-serif; font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--terracotta); font-weight: 700; }
+        .pass-flight-no { font-family: 'Bodoni Moda', serif; font-size: 0.85rem; color: #777; }
+        .pass-route { display: flex; align-items: center; justify-content: space-between; margin: 10px 0 16px 0; }
+        .route-code { font-family: 'Bodoni Moda', serif; font-size: 1.8rem; color: var(--ink-black); line-height: 1; }
+        .route-sub { font-size: 0.7rem; color: #888; font-family: system-ui, sans-serif; text-transform: uppercase; margin-top: 2px; }
+        .route-plane { color: var(--terracotta); font-size: 1.2rem; opacity: 0.8; }
+        .pass-meta { display: flex; gap: 20px; font-family: system-ui, sans-serif; }
+        .meta-col { display: flex; flex-direction: column; }
+        .meta-lbl { font-size: 0.6rem; letter-spacing: 1.5px; color: #888; text-transform: uppercase; }
+        .meta-val { font-size: 0.85rem; font-weight: 600; color: var(--ink-black); }
 
         .pass-stub {
             width: 140px;
@@ -684,36 +493,12 @@
             cursor: pointer;
             position: relative;
             transform-origin: top right;
-            transition: transform 0.6s ease, opacity 0.5s ease, width 0.6s ease,
-                padding 0.6s ease, background 0.3s ease;
+            transition: transform 0.6s ease, opacity 0.5s ease, width 0.6s ease, padding 0.6s ease, background 0.3s ease;
         }
-        .pass-stub:hover {
-            background: #e2d5bd;
-        }
-        .stub-hint {
-            font-size: 0.65rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: var(--terracotta);
-            font-family: system-ui, sans-serif;
-            font-weight: 700;
-            opacity: 0.9;
-        }
-        .stub-seat {
-            font-family: 'Reenie Beanie', cursive;
-            font-size: 2.2rem;
-            color: var(--ink-black);
-            line-height: 1;
-            font-weight: 600;
-        }
-        .stub-action {
-            font-size: 0.7rem;
-            color: #4a4543;
-            font-family: system-ui, sans-serif;
-            border-bottom: 1px dashed #4a4543;
-            padding-bottom: 2px;
-            font-weight: 600;
-        }
+        .pass-stub:hover { background: #e2d5bd; }
+        .stub-hint { font-size: 0.65rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--terracotta); font-family: system-ui, sans-serif; font-weight: 700; opacity: 0.9; }
+        .stub-seat { font-family: 'Reenie Beanie', cursive; font-size: 2.2rem; color: var(--ink-black); line-height: 1; font-weight: 600; }
+        .stub-action { font-size: 0.7rem; color: #4a4543; font-family: system-ui, sans-serif; border-bottom: 1px dashed #4a4543; padding-bottom: 2px; font-weight: 600; }
 
         .boarding-pass-wrapper.is-torn .pass-stub {
             opacity: 0;
@@ -728,46 +513,27 @@
             max-height: 0;
             opacity: 0;
             overflow: hidden;
-            transition: max-height 0.8s ease, opacity 0.8s ease, margin-top 0.8s ease,
-                padding 0.8s ease;
+            transition: max-height 0.8s ease, opacity 0.8s ease, margin-top 0.8s ease, padding 0.8s ease;
             background: rgba(255, 253, 247, 0.95);
             border: 1px dashed var(--terracotta);
             border-radius: 8px;
             padding: 0 20px;
             text-align: center;
         }
+
         .boarding-pass-wrapper.is-torn .voucher-claim-card {
             max-height: 200px;
             opacity: 1;
             margin-top: 18px;
             padding: 20px;
         }
-        .voucher-title {
-            font-family: 'Bodoni Moda', serif;
-            font-size: 1.05rem;
-            color: var(--terracotta);
-            letter-spacing: 0.5px;
-        }
-        .voucher-desc {
-            font-family: 'Reenie Beanie', cursive;
-            font-size: 1.75rem;
-            color: var(--ink-black);
-            margin-top: 6px;
-            line-height: 1.25;
-        }
 
-        .signature-section {
-            margin-top: 60px;
-            text-align: right;
-        }
-        .sig-handwritten {
-            font-family: 'Reenie Beanie', cursive;
-            font-size: 3rem;
-            color: var(--terracotta);
-            margin-top: 5px;
-        }
+        .voucher-title { font-family: 'Bodoni Moda', serif; font-size: 1.05rem; color: var(--terracotta); letter-spacing: 0.5px; }
+        .voucher-desc { font-family: 'Reenie Beanie', cursive; font-size: 1.75rem; color: var(--ink-black); margin-top: 6px; line-height: 1.25; }
 
-        /* ── floating player ── */
+        .signature-section { margin-top: 60px; text-align: right; }
+        .sig-handwritten { font-family: 'Reenie Beanie', cursive; font-size: 3rem; color: var(--terracotta); margin-top: 5px; }
+
         #floating-player {
             position: fixed;
             bottom: 30px;
@@ -782,47 +548,30 @@
             align-items: center;
             gap: 16px;
             z-index: 90;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
             color: #fff;
             transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        #floating-player.active {
-            transform: translateX(-50%) translateY(0);
-        }
+
+        #floating-player.active { transform: translateX(-50%) translateY(0); }
 
         .mini-vinyl {
             width: 42px;
             height: 42px;
             border-radius: 50%;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255,255,255,0.2);
             animation: spin 4s linear infinite;
             animation-play-state: paused;
         }
-        .mini-vinyl.playing {
-            animation-play-state: running;
-        }
-        .mini-vinyl img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
 
-        .player-details {
-            display: flex;
-            flex-direction: column;
-        }
-        .player-song {
-            font-family: 'Bodoni Moda', serif;
-            font-size: 0.95rem;
-            color: #fff;
-        }
-        .player-artist {
-            font-size: 0.75rem;
-            color: #aaa;
-            font-family: system-ui, -apple-system, sans-serif;
-        }
+        .mini-vinyl.playing { animation-play-state: running; }
+        .mini-vinyl img { width: 100%; height: 100%; object-fit: cover; }
+
+        .player-details { display: flex; flex-direction: column; }
+        .player-song { font-family: 'Bodoni Moda', serif; font-size: 0.95rem; color: #fff; }
+        .player-artist { font-size: 0.75rem; color: #aaa; font-family: system-ui, -apple-system, sans-serif; }
 
         .play-toggle-btn {
             background: var(--amber-warmth);
@@ -837,65 +586,25 @@
             margin-left: 10px;
             transition: transform 0.2s;
         }
-        .play-toggle-btn:hover {
-            transform: scale(1.05);
-        }
-        .play-toggle-btn svg {
-            width: 16px;
-            height: 16px;
-            fill: var(--ink-black);
-        }
 
-        @keyframes spin {
-            100% {
-                transform: rotate(360deg);
-            }
-        }
+        .play-toggle-btn:hover { transform: scale(1.05); }
+        .play-toggle-btn svg { width: 16px; height: 16px; fill: var(--ink-black); }
 
-        /* ── responsive ── */
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
         @media (max-width: 600px) {
-            .main-title {
-                font-size: 2.6rem;
-            }
-            .letter-content {
-                font-size: 1.2rem;
-            }
-            #floating-player {
-                width: 90%;
-                max-width: 360px;
-            }
-            
-            /* Scale and soften floating suns on mobile instead of hiding them */
-            .bg-sun-layer {
-                opacity: 0.35; 
-            }
-            .floating-sun {
-                transform: scale(0.45);
-            }
-            .s-top-right, .s-mid-right-2, .s-bottom-left {
-                width: 220px;
-                height: 220px;
-            }
-
-            .boarding-pass {
-                flex-direction: column;
-            }
-            .pass-main {
-                border-right: none;
-                border-bottom: 2px dashed #d8caa9;
-            }
-            .pass-stub {
-                width: 100%;
-                padding: 16px;
-                flex-direction: row;
-            }
+            .main-title { font-size: 2.6rem; }
+            .letter-content { font-size: 1.2rem; }
+            #floating-player { width: 90%; max-width: 360px; }
+            .floating-sun { display: none; }
+            .boarding-pass { flex-direction: column; }
+            .pass-main { border-right: none; border-bottom: 2px dashed #d8caa9; }
+            .pass-stub { width: 100%; padding: 16px; flex-direction: row; }
         }
     </style>
 </head>
-
 <body class="locked" oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
 
-    <!-- ─── backgrounds ─── -->
     <div class="gradient-bg"></div>
     <div class="cursor-light" id="cursor-light"></div>
     <div class="grain-overlay"></div>
@@ -913,22 +622,20 @@
         <div class="floating-sun s-bottom-right-2"></div>
     </div>
 
-    <!-- ─── intro overlay ─── -->
     <div id="intro-overlay">
         <div class="sleeve-container" id="unbox-trigger">
             <div class="vinyl-preview">
                 <div class="vinyl-label">
-                    <img id="intro-vinyl-img" src="" alt="Vinyl Label" />
+                    <img id="intro-vinyl-img" src="" alt="Vinyl Label">
                 </div>
             </div>
             <div class="album-sleeve">
-                <img id="intro-sleeve-img" src="" alt="Album Cover" class="sleeve-cover-img" />
+                <img id="intro-sleeve-img" src="" alt="Album Cover" class="sleeve-cover-img">
             </div>
         </div>
         <div class="click-prompt" id="prompt-text"></div>
     </div>
 
-    <!-- ─── main content ─── -->
     <div id="content-wrapper">
         <header class="header-section reveal-item">
             <span class="vol-tag" id="header-vol"></span>
@@ -939,35 +646,32 @@
         <article class="letter-content" id="dynamic-letter-content"></article>
     </div>
 
-    <!-- ─── floating player ─── -->
     <div id="floating-player">
         <div class="mini-vinyl" id="mini-vinyl">
-            <img id="player-img" src="" alt="Mini Album Art" />
+            <img id="player-img" src="" alt="Mini Album Art">
         </div>
         <div class="player-details">
             <span class="player-song" id="player-song"></span>
             <span class="player-artist" id="player-artist"></span>
         </div>
         <button class="play-toggle-btn" id="play-btn" aria-label="Toggle Audio">
-            <svg id="play-icon" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" /></svg>
+            <svg id="play-icon" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
         </button>
     </div>
 
-    <!-- ─── audio ─── -->
     <audio id="sfx-record-start" preload="auto">
-        <source src="./audio/recordstart.mp3" type="audio/mpeg" />
+        <source src="./audio/recordstart.mp3" type="audio/mpeg">
     </audio>
+
     <audio id="audio-engine" loop preload="auto">
-        <source src="./audio/music.mp3" type="audio/mpeg" />
+        <source src="./audio/music.mp3" type="audio/mpeg">
     </audio>
+
     <audio id="sfx-paper" preload="auto">
-        <source src="./audio/paper.mp3" type="audio/mpeg" />
+        <source src="./audio/paper.mp3" type="audio/mpeg">
     </audio>
 
     <script>
-        // =========================================================================
-        // CONFIGURATION
-        // =========================================================================
         const CONFIG = {
             media: {
                 albumCover: "./images/sheandhim.png",
@@ -982,71 +686,83 @@
                 title: "I Thought I Saw Your Face Today",
                 date: "August 8, 2026"
             },
-            letterBlocks: [{
-                type: "paragraph",
-                dropCap: true,
-                text: "My Dearest Cara, \n I can hardely believe six months have passed since we first began this chapter together. It feels as though time moves differently when I think about us—part of me feels like we started just yesterday, yet another part feels like you've been a quiet, constant presence in my life forever."
-            }, {
-                type: "quote",
-                text: '"I thought I saw your face today in the theater crowd…"',
-                sub: "She & Him • 2008"
-            }, {
-                type: "paragraph",
-                text: "Every time this melody fills the room, my mind naturally drifts straight to you. No matter where I go, what project I'm working on, or how noisy the world gets around me, your face and your warmth are always the clearest things in my mind."
-            }, {
-                type: "polaroid",
-                secretNote: '"You are my absolute favorite thought every single day."',
-                flipHint: "(tap to flip back)"
-            }, {
-                type: "paragraph",
-                text: "Looking back at the past half-year, it's not just the big milestones I hold onto—it's the small, quiet details. It’s the late-night talks, the spontaneous shared laughs, and the effortless way we make sense of each other even when distance gets in the way."
-            }, {
-                type: "divider"
-            }, {
-                type: "paragraph",
-                text: "Distance has a way of testing patience, but with you, it has only made every message, every shared joke, and every quiet moment feel infinitely more meaningful. You’ve given me a sense of grounding and happiness that I never quite knew I was looking for until I found it in you."
-            }, {
-                type: "boardingPass",
-                airTitle: "Airlines of Us • Vol 06",
-                flightNo: "FLIGHT #0808",
-                fromCode: "ME",
-                fromSub: "Here",
-                toCode: "YOU",
-                toSub: "Forever",
-                passenger: "Cara Estender",
-                date: "08.08.26",
-                stubHint: "BOARDING",
-                stubSeat: "06 Mo.",
-                stubAction: "✂ Tap to Tear",
-                voucherTitle: "🎟 SPECIAL VOUCHER UNLOCKED",
-                voucherDesc: '"Valid for 1x Long-Distance Movie Night & Infinite Warm Hugs"'
-            }, {
-                type: "paragraph",
-                text: "I love how effortlessly you make my world brighter. Even on days when everything feels fast-paced or overwhelming, thinking of you brings an instant sense of calm and clarity."
-            }, {
-                type: "polaroid2",
-                secretNote: '"Another beautiful chapter with you."',
-                flipHint: "(tap to flip back)"
-            }, {
-                type: "paragraph",
-                text: "Thank you for all of the warmth, the quiet conversations, the endless laughs, and the comfort of knowing I have someone as genuine as you in my corner. You bring a kind of softness and clarity to my life that I wouldn't trade for anything."
-            }, {
-                type: "paragraph",
-                text: "I built this small space to preserve this moment in time—a tiny digital keepsake dedicated to six beautiful months. Here's to everything we've built so far, and to all the unwritten pages waiting for us ahead."
-            }, {
-                type: "signature",
-                text: "Always yours,",
-                name: "Carl"
-            }],
+            
+            // ---------------------------------------------------------------------
+            // Clean, easy English / soft casual mix (First M capitalized only)
+            // ---------------------------------------------------------------------
+            letterBlocks: [
+                {
+                    type: "paragraph",
+                    dropCap: true,
+                    text: "My dearest cara, \n honest to god I still can't believe it's been 6 months already. time flies so fast, but at the same time it feels like we've been together forever."
+                },
+                {
+                    type: "quote",
+                    text: '"and i couldnt help but fall in love again.."',
+                    sub: "She & Him • 2008"
+                },
+                {
+                    type: "paragraph",
+                    text: "every time I hear this song, you're always the first person that comes to mind. no matter how chaotic things get, you always know how to bring me peace."
+                },
+                {
+                    type: "polaroid",
+                    secretNote: '"You\'re still my favorite thought every single day."',
+                    flipHint: "(tap to flip back)"
+                },
+                {
+                    type: "paragraph",
+                    text: "I don't want to fake it or pretend that everything has been 100% fine all the time. we both know these past few days haven't been easy. we've had our fights, and honestly we've seen the worst parts of each other."
+                },
+                {
+                    type: "divider"
+                },
+                {
+                    type: "paragraph",
+                    text: "alam ko na yung insecurities ko sometimes get in the way and hurt you, especially when it feels like I’m questioning you. I’m really sorry for that. Hindi ko talaga intended na iparamdam sa'yo na hindi kita pinagkakatiwalaan... i just get scared after everything we've argued about, and I just hope you won't love me less."
+                },
+                {
+                    type: "boardingPass",
+                    airTitle: "Airlines of Us • Vol 06",
+                    flightNo: "FLIGHT #0808",
+                    fromCode: "ME",
+                    fromSub: "Here",
+                    toCode: "YOU",
+                    toSub: "Forever",
+                    passenger: "Cara Estender",
+                    date: "08.08.26",
+                    stubHint: "BOARDING",
+                    stubSeat: "06 Mo.",
+                    stubAction: "✂ Tap to Tear",
+                    voucherTitle: "🎟 SPECIAL VOUCHER UNLOCKED",
+                    voucherDesc: '"Valid for 1x Long-Distance Movie Night & Unlimited Warm Hugs"'
+                },
+                {
+                    type: "paragraph",
+                    text: "but amidst all the mess, the exhausting fights, and everything that went wrong... there's one thing I am completely sure about: I love you so much. I will always love you forever, no matter how tough things get for us."
+                },
+                {
+                    type: "polaroid2",
+                    secretNote: '"Through every storm, it\'s still you."',
+                    flipHint: "(tap to flip back)"
+                },
+                {
+                    type: "paragraph",
+                    text: "thank you for staying even when things get really hard between us. I made this small page just so we can hold onto our 6th month mark. happy 6th monthsary, my love. I know we can get through all of this."
+                },
+                {
+                    type: "signature",
+                    text: "always yours,",
+                    name: "carl"
+                }
+            ],
+
             player: {
                 song: "I Thought I Saw Your Face Today",
                 artist: "She & Him"
             }
         };
 
-        // =========================================================================
-        // PAPER SFX (with random pitch)
-        // =========================================================================
         const sfxPaper = document.getElementById('sfx-paper');
 
         function playPaperSound() {
@@ -1054,12 +770,9 @@
             const clone = sfxPaper.cloneNode(true);
             clone.playbackRate = 1 + (Math.random() * 0.3 - 0.15);
             clone.volume = 0.4;
-            clone.play().catch(() => {});
+            clone.play().catch(e => console.log("Paper SFX error:", e));
         }
 
-        // =========================================================================
-        // RENDER ENGINE
-        // =========================================================================
         function renderLetterContent() {
             const container = document.getElementById('dynamic-letter-content');
             container.innerHTML = '';
@@ -1080,18 +793,19 @@
                         const parts = block.text.split('\n');
                         const salutation = parts[0].trim();
                         const bodyText = parts.slice(1).join(' ').trim();
+
                         const dropLetter = salutation.charAt(0);
                         const restOfSalutation = salutation.slice(1);
 
                         const wrapper = document.createElement('div');
                         wrapper.className = 'drop-cap-container reveal-item';
                         wrapper.innerHTML = `
-                                <div class="drop-cap-header">
-                                    <span class="drop-cap-letter">${dropLetter}</span>
-                                    <span class="drop-cap-salutation">${restOfSalutation}</span>
-                                </div>
-                                <p class="drop-cap-body">${bodyText}</p>
-                            `;
+                            <div class="drop-cap-header">
+                                <span class="drop-cap-letter">${dropLetter}</span>
+                                <span class="drop-cap-salutation">${restOfSalutation}</span>
+                            </div>
+                            <p class="drop-cap-body">${bodyText}</p>
+                        `;
                         container.appendChild(wrapper);
                     } else {
                         const p = document.createElement('p');
@@ -1099,109 +813,115 @@
                         p.textContent = block.text;
                         container.appendChild(p);
                     }
-                } else if (block.type === 'quote') {
+                } 
+                else if (block.type === 'quote') {
                     const div = document.createElement('div');
                     div.className = 'quote-block reveal-item';
                     div.innerHTML = `
-                            <div class="quote-text">${block.text}</div>
-                            <div class="quote-sub">${block.sub}</div>
-                        `;
+                        <div class="quote-text">${block.text}</div>
+                        <div class="quote-sub">${block.sub}</div>
+                    `;
                     container.appendChild(div);
-                } else if (block.type === 'polaroid') {
+                } 
+                else if (block.type === 'polaroid') {
                     const wrapper = document.createElement('div');
                     wrapper.className = 'polaroid-wrapper reveal-item';
-                    wrapper.onclick = function() {
-                        this.classList.toggle('flipped');
+                    wrapper.onclick = function() { 
+                        this.classList.toggle('flipped'); 
                         playPaperSound();
                     };
                     wrapper.innerHTML = `
-                            <div class="polaroid-card">
-                                <div class="polaroid-front">
-                                    <img src="${CONFIG.media.polaroidImg}" alt="Polaroid photo" />
-                                </div>
-                                <div class="polaroid-back">
-                                    <div class="secret-note">${block.secretNote}</div>
-                                    <div class="flip-hint">${block.flipHint}</div>
-                                </div>
+                        <div class="polaroid-card">
+                            <div class="polaroid-front">
+                                <img src="${CONFIG.media.polaroidImg}" alt="Polaroid photo">
                             </div>
-                        `;
+                            <div class="polaroid-back">
+                                <div class="secret-note">${block.secretNote}</div>
+                                <div class="flip-hint">${block.flipHint}</div>
+                            </div>
+                        </div>
+                    `;
                     container.appendChild(wrapper);
-                } else if (block.type === 'polaroid2') {
+                } 
+                else if (block.type === 'polaroid2') {
                     const wrapper = document.createElement('div');
                     wrapper.className = 'polaroid-wrapper reveal-item';
-                    wrapper.onclick = function() {
-                        this.classList.toggle('flipped');
+                    wrapper.onclick = function() { 
+                        this.classList.toggle('flipped'); 
                         playPaperSound();
                     };
                     wrapper.innerHTML = `
-                            <div class="polaroid-card">
-                                <div class="polaroid-front">
-                                    <img src="${CONFIG.media.polaroidImg2}" alt="Polaroid photo 2" />
-                                </div>
-                                <div class="polaroid-back">
-                                    <div class="secret-note">${block.secretNote}</div>
-                                    <div class="flip-hint">${block.flipHint}</div>
-                                </div>
+                        <div class="polaroid-card">
+                            <div class="polaroid-front">
+                                <img src="${CONFIG.media.polaroidImg2}" alt="Polaroid photo 2">
                             </div>
-                        `;
+                            <div class="polaroid-back">
+                                <div class="secret-note">${block.secretNote}</div>
+                                <div class="flip-hint">${block.flipHint}</div>
+                            </div>
+                        </div>
+                    `;
                     container.appendChild(wrapper);
-                } else if (block.type === 'divider') {
+                }
+                else if (block.type === 'divider') {
                     const div = document.createElement('div');
                     div.className = 'section-divider reveal-item';
                     div.textContent = '✦ ✦ ✦';
                     container.appendChild(div);
-                } else if (block.type === 'boardingPass') {
+                } 
+                else if (block.type === 'boardingPass') {
                     const wrap = document.createElement('div');
                     wrap.className = 'boarding-pass-wrapper reveal-item';
                     wrap.id = 'boarding-pass-wrap';
                     wrap.innerHTML = `
-                            <div class="boarding-pass">
-                                <div class="pass-main">
-                                    <div class="pass-header">
-                                        <span class="pass-air-title">${block.airTitle}</span>
-                                        <span class="pass-flight-no">${block.flightNo}</span>
+                        <div class="boarding-pass">
+                            <div class="pass-main">
+                                <div class="pass-header">
+                                    <span class="pass-air-title">${block.airTitle}</span>
+                                    <span class="pass-flight-no">${block.flightNo}</span>
+                                </div>
+                                <div class="pass-route">
+                                    <div>
+                                        <div class="route-code">${block.fromCode}</div>
+                                        <div class="route-sub">${block.fromSub}</div>
                                     </div>
-                                    <div class="pass-route">
-                                        <div>
-                                            <div class="route-code">${block.fromCode}</div>
-                                            <div class="route-sub">${block.fromSub}</div>
-                                        </div>
-                                        <div class="route-plane">✈</div>
-                                        <div>
-                                            <div class="route-code">${block.toCode}</div>
-                                            <div class="route-sub">${block.toSub}</div>
-                                        </div>
-                                    </div>
-                                    <div class="pass-meta">
-                                        <div class="meta-col">
-                                            <span class="meta-lbl">Passenger</span>
-                                            <span class="meta-val">${block.passenger}</span>
-                                        </div>
-                                        <div class="meta-col">
-                                            <span class="meta-lbl">Date</span>
-                                            <span class="meta-val">${block.date}</span>
-                                        </div>
+                                    <div class="route-plane">✈</div>
+                                    <div>
+                                        <div class="route-code">${block.toCode}</div>
+                                        <div class="route-sub">${block.toSub}</div>
                                     </div>
                                 </div>
-                                <div class="pass-stub" id="stub-tear-trigger" onclick="document.getElementById('boarding-pass-wrap').classList.add('is-torn'); playPaperSound();">
-                                    <span class="stub-hint">${block.stubHint}</span>
-                                    <span class="stub-seat">${block.stubSeat}</span>
-                                    <span class="stub-action">${block.stubAction}</span>
+                                <div class="pass-meta">
+                                    <div class="meta-col">
+                                        <span class="meta-lbl">Passenger</span>
+                                        <span class="meta-val">${block.passenger}</span>
+                                    </div>
+                                    <div class="meta-col">
+                                        <span class="meta-lbl">Date</span>
+                                        <span class="meta-val">${block.date}</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="voucher-claim-card">
-                                <div class="voucher-title">${block.voucherTitle}</div>
-                                <div class="voucher-desc">${block.voucherDesc}</div>
+                            <div class="pass-stub" id="stub-tear-trigger" onclick="document.getElementById('boarding-pass-wrap').classList.add('is-torn'); playPaperSound();">
+                                <span class="stub-hint">${block.stubHint}</span>
+                                <span class="stub-seat">${block.stubSeat}</span>
+                                <span class="stub-action">${block.stubAction}</span>
                             </div>
-                        `;
+                        </div>
+                        <div class="voucher-claim-card">
+                            <div class="voucher-title">${block.voucherTitle}</div>
+                            <div class="voucher-desc">${block.voucherDesc}</div>
+                        </div>
+                    `;
                     container.appendChild(wrap);
-                } else if (block.type === 'signature') {
+                } 
+                else if (block.type === 'signature') {
                     const sig = document.createElement('div');
                     sig.className = 'signature-section reveal-item';
                     sig.innerHTML = `
-                            <div>${block.text}</div>
-                            <div class="sig-handwritten">${block.name}</div>
-                        `;
+                        <div>${block.text}</div>
+                        <div class="sig-handwritten">${block.name}</div>
+                    `;
                     container.appendChild(sig);
                 }
             });
@@ -1209,9 +929,6 @@
 
         renderLetterContent();
 
-        // =========================================================================
-        // PAGE LOGIC
-        // =========================================================================
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
@@ -1220,8 +937,7 @@
 
         document.addEventListener('keydown', (e) => {
             if (
-                e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.key === 'a' || e.key === 'A' || e.key === 'u' ||
-                    e.key === 'U' || e.key === 's' || e.key === 'S') ||
+                e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.key === 'a' || e.key === 'A' || e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S') ||
                 (e.metaKey && (e.key === 'c' || e.key === 'C' || e.key === 'a' || e.key === 'A'))
             ) {
                 e.preventDefault();
@@ -1233,13 +949,15 @@
         const clickPrompt = document.querySelector('.click-prompt');
         const contentWrapper = document.getElementById('content-wrapper');
         const floatingPlayer = document.getElementById('floating-player');
+        
         const sfxRecordStart = document.getElementById('sfx-record-start');
         const audioEngine = document.getElementById('audio-engine');
+        
         const miniVinyl = document.getElementById('mini-vinyl');
         const playBtn = document.getElementById('play-btn');
         const playIcon = document.getElementById('play-icon');
         const cursorLight = document.getElementById('cursor-light');
-
+        
         let revealItems = document.querySelectorAll('.reveal-item');
 
         const pauseSvg = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
@@ -1247,6 +965,7 @@
 
         const MAX_VOLUME = 0.3;
         let fadeInterval = null;
+
         audioEngine.volume = 0;
 
         function updateUIPlayingState(isPlaying) {
@@ -1262,7 +981,9 @@
         function fadeInAudio(duration = 1000) {
             clearInterval(fadeInterval);
             if (audioEngine.paused) audioEngine.play();
+
             updateUIPlayingState(true);
+
             const step = MAX_VOLUME / (duration / 20);
             fadeInterval = setInterval(() => {
                 if (audioEngine.volume + step < MAX_VOLUME) {
@@ -1277,7 +998,9 @@
         function fadeOutAudio(duration = 800) {
             clearInterval(fadeInterval);
             const step = audioEngine.volume / (duration / 20);
+            
             updateUIPlayingState(false);
+
             fadeInterval = setInterval(() => {
                 if (audioEngine.volume - step > 0) {
                     audioEngine.volume -= step;
@@ -1295,9 +1018,9 @@
         });
 
         function revealInitialBatch() {
-            const items = document.querySelectorAll('.reveal-item');
+            revealItems = document.querySelectorAll('.reveal-item');
             let delay = 0;
-            items.forEach((item) => {
+            revealItems.forEach(item => {
                 const rect = item.getBoundingClientRect();
                 if (rect.top < window.innerHeight * 0.9) {
                     setTimeout(() => {
@@ -1310,11 +1033,12 @@
 
         function checkRevealsOnScroll() {
             const triggerBottom = window.innerHeight * 0.88;
-            revealItems.forEach((item) => {
+            revealItems.forEach(item => {
                 if (!item.classList.contains('visible')) {
                     const itemTop = item.getBoundingClientRect().top;
                     if (itemTop < triggerBottom) {
                         item.classList.add('visible');
+                        playPaperSound();
                     }
                 }
             });
@@ -1331,7 +1055,7 @@
 
             if (sfxRecordStart) {
                 sfxRecordStart.volume = 0.6;
-                sfxRecordStart.play().catch(() => {});
+                sfxRecordStart.play().catch(err => console.log('SFX play blocked:', err));
             }
 
             setTimeout(() => {
@@ -1361,8 +1085,8 @@
                 fadeOutAudio(800);
             }
         }
-        playBtn.addEventListener('click', toggleAudioState);
 
+        playBtn.addEventListener('click', toggleAudioState);
         window.addEventListener('scroll', checkRevealsOnScroll);
     </script>
 </body>
